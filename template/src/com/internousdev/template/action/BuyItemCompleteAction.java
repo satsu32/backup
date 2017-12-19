@@ -23,12 +23,6 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 		return result;
 	}
 
-	
-	public Map<String, Object> getSession() {
-		return session;
-	}
-
-
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;

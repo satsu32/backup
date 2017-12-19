@@ -93,10 +93,6 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		this.deleteFlg = deleteFlg;
 	}
 
-	public Map<String, Object> getSession() {
-		return session;
-	}
-
 	@Override
 	public void setSession(Map<String, Object> loginSessionMap) {
 		this.session = loginSessionMap;

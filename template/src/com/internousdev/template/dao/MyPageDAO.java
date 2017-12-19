@@ -79,7 +79,7 @@ public class MyPageDAO {
 		return result;
 	}
 
-	public MyPageDTO getMyPageDTo() {
+	public MyPageDTO getMyPageDTO() {
 		return myPageDTO;
 	}
 }
