@@ -86,4 +86,28 @@
             </td>
             <td><s:property value="totalCount" /><span>個</span>
             </td>
-            </table></s:elseif></div></div></body></html>
+            <td><s:property value="payment"/> </td>
+            <td><s:property value="insert_date"/></td>
+            </tr>
+            </s:iterator>
+            </table>
+            <s:form action="MyPageAction">
+              <input type="hidden" name="deleteFlg" value="1">
+              <s:submit value="削除"  method="delete" />
+              </s:form>
+            </s:elseif>
+            <s:if test="message != null">
+               <h3><s:property value="message"/></h3>
+            </s:if>
+                <div id="test-right">
+                <p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
+                <p>ログアウトする場合は<a href='<s:url action="LoginAction" />'>こちら</a></p>
+             </div>
+          </div>
+      </div>
+      <div id="footer">
+        <div id="pr">
+        </div>
+      </div>
+</body>
+</html>
