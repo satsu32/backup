@@ -1,9 +1,9 @@
-set names utf8;
-set foreign_key_checks = 0;
+set name utf8;
+set foreign_key_checks =0;
 drop database if exists ecsite;
 
 create database if not exists ecsite;
-use ecsite;
+use ecite;
 
 drop table if exists login_user_transaction;
 
@@ -36,10 +36,12 @@ total_price int,
 total_count int,
 user_master_id varchar(16),
 pay varchar(30),
-insert_date datetime,
-delete_date datetime
+insert_date date datetime,
+delete_date date datetime
 );
 
 
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("NoteBook", 100, 50);
-INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("internous", "internous01", "test");
+INSERT INTO item_info_transaction(item_name, item_price, item_stock)
+VALUES("NoteBook",100,50);
+INSERT INTO login_user_transaction(login_id, login_pass, user_name)
+VALUES("internous","internous01","test");
