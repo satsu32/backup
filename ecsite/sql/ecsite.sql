@@ -43,7 +43,7 @@ total_count int,
 user_master_id varchar(16),
 pay varchar(30),
 insert_date datetime,
-delete_date daterime
+delete_date datetime
 );
 
 INSERT INTO

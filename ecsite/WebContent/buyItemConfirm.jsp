@@ -51,7 +51,7 @@
         #main {
               width: 100%;
           height: 500px;
-          text-aligin: center;
+          text-align: center;
          }
 
          #footer {

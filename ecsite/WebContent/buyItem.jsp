@@ -16,7 +16,7 @@ pageEncoding="UTF-8"%>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta charset="utf-8">
-    <title>BuyItme画面</title>
+    <title>BuyItem画面</title>
     <style type="text/css">
 
 
@@ -108,6 +108,18 @@ pageEncoding="UTF-8"%>
                          </td>
                      </tr>
                      <tr>
+                     <td>
+                     <span>支払い方法</span>
+                     </td>
+                     <td>
+                     <input type="radio" name="pay"
+                     value="1" checked="checked">現金払い
+
+                     <input type="radio" name="pay"
+                     value="2">クレジットカード
+                     </td>
+                     </tr>
+                     <tr>
                           <td>
                                <s:submit value="購入"/>
                           </td>
@@ -116,6 +128,7 @@ pageEncoding="UTF-8"%>
               </s:form>
                    <div>
                       <p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
+                      <p>マイページは<a href='<s:url action="MyPageAction" />'>こちら</a></p>
                    </div>
                 </div>
             </div>

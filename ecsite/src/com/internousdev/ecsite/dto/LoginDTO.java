@@ -32,7 +32,7 @@ public class LoginDTO {
     	 return loginFlg;
      }
 
-     public void setLoginFllg(boolean loginFlg) {
+     public void setLoginFlg(boolean loginFlg) {
     	 this.loginFlg = loginFlg;
      }
      }

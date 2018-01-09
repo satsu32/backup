@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; cgarset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html>
@@ -6,7 +6,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charest=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="imagetoolbar" content="no" />
@@ -43,6 +43,12 @@
             height: 80px;
             background-color: black;
          }
+
+         #main {
+           width:100%;
+           height: 500px;
+           text-align: center;
+           }
 
          #box {
              border: 1px solid #000000;
@@ -87,7 +93,7 @@
                 </tr>
                 <tr id="box">
                    <td>
-                       <label>ログイン名:</label>
+                       <label>ユーザー名:</label>
                    </td>
                    <td>
                        <s:property value="userName" escape="false" />

@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Style-Type" content="tetx/css" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="imagetoolbar" content="no" />
     <meta name="description" content="" />
@@ -43,6 +43,13 @@
           height: 80px;
           background-color: black;
         }
+
+        #main {
+        width: 100%;
+        height: 500px;
+        text-align: center;
+        }
+
        #footer {
           width: 100%;
           height:80px;
@@ -96,12 +103,12 @@
               <s:submit value="削除"  method="delete" />
               </s:form>
             </s:elseif>
-            <s:if test="message != null">
+            <s:if test="message ! = null">
                <h3><s:property value="message"/></h3>
             </s:if>
                 <div id="test-right">
                 <p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
-                <p>ログアウトする場合は<a href='<s:url action="LoginAction" />'>こちら</a></p>
+                <p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
              </div>
           </div>
       </div>

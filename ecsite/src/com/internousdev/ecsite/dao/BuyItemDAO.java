@@ -15,7 +15,7 @@ public class BuyItemDAO {
       /**
        * 商品情報取得メソッド
        *
-       * @return BuyitemDTO
+       * @return BuyItemDTO
        */
 	  public BuyItemDTO getBuyItemInfo() {
 

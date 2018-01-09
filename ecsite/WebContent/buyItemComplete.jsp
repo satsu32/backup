@@ -68,6 +68,9 @@
          </div>
          <div id="main">
              <div id="top">
+             <p>BuyItemComplete</p>
+             </div>
+             <div>
              <p>購入手続きが完了いたしました。</p>
              <div>
                 <a href='<s:url action="MyPageAction" />'>マイページ</a>

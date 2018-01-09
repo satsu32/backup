@@ -20,7 +20,7 @@
         margin:0;
         padding:0;
         line-height:1.6;
-        letter-spcing:1px;
+        letter-spacing:1px;
         font-family:Verdana, Helvetica, sans-serif;
         font-size:12px;
         color:#333;
@@ -28,13 +28,14 @@
       }
 
       table {
-          text-aligin:center;
+          text-align:center;
           margin:0 auto;
        }
 
       #top {
          width:780px;
          margin:30px auto;
+         border:1px solid #333;
       }
 
       #header {
@@ -46,7 +47,7 @@
        #main {
            width: 100%;
            height:500px;
-           text-aligin: center;
+           text-align: center;
          }
 
         #footer {
@@ -91,6 +92,9 @@
                  <tr>
                     <td>
                         <label>ユーザー名:</label>
+                    </td>
+                    <td>
+                    <input type="text" name="userName" value="" />
                     </td>
                  </tr>
                  <s:submit value="登録"/>
