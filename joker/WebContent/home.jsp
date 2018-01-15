@@ -10,13 +10,16 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
+
+
 <title>Home画面</title>
 <style type="text/css">
 </style>
 </head>
 <body>
      <div class="example">
-        <img src="Lighthouse.jpg"/>
+      <img src="imgages/Lighthouse.jpg" alt="写真" width="193" height="130">
+
      </div>
      <div id="header">
         <div id="pr">
@@ -27,17 +30,22 @@
             <p>Home<p>
         </div>
 
+
      <div>
-          <s:form action="HomeAction">
-              <s:submit value="商品購入"/>
-          </s:form>
-     </div>
+        <h3>ログイン</h3>
+        <s:form action="LoginAction">
+           <s:textfield name="loginUserId" />
+           <s:password name="loginPassword"/>
+           <s:submit value="ログイン"/>
+        </s:form>
+        <br/>
+
   </div>
   <div id="footer">
      <div id="pr">
      </div>
   </div>
-
+</div>
 
 </body>
 </html>
