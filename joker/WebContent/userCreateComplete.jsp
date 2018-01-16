@@ -11,42 +11,29 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-
-
-<title>Home画面</title>
-<style type="text/css">
-</style>
+    <meta charset="utf-8">
+    <title>UserCreateComplete画面</title>
 </head>
 <body>
-     <div class="example">
-      <img src="./imgages/Lighthouse.jpg" alt="写真" width="193" height="130">
-
-     </div>
-     <div id="header">
+    <div id="header">
         <div id="pr">
         </div>
      </div>
      <div id="main">
         <div id="top">
-            <p>Home<p>
+            <p>UserCreateConfirm</p>
         </div>
+        <div><br>
+           <h3>ユーザーの登録が完了致しました。</h3>
 
-
-     <div>
-        <h3>ログイン</h3>
-        <s:form action="LoginAction">
-           <s:textfield name="loginUserId" />
-           <s:password name="loginPassword"/>
-           <s:submit value="ログイン"/>
-        </s:form>
-        <br/>
-
-  </div>
-  <div id="footer">
-     <div id="pr">
-     </div>
-  </div>
-</div>
-
-</body>
-</html>
+           <div>
+              <a href='<s:url action="HomeAction" />'>ログインへ</a>
+           </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="pr">
+        </div>
+    </div>
+ </body>
+ </html>

@@ -4,7 +4,10 @@ public class BuyItemDTO {
 
 	public int id;
 	public String itemName;
+	public String itemImage;
 	public String itemPrice;
+
+
 	public String getItemName() {
 		return itemName;
 	}
@@ -15,6 +18,16 @@ public class BuyItemDTO {
 
 	public String getItemPrice() {
 		return itemPrice;
+	}
+
+
+
+	public String getItemImage() {
+		return itemImage;
+	}
+
+	public void setItemImage(String itemImage) {
+		this.itemImage = itemImage;
 	}
 
 	public void setItemPrice(String itemPrice) {
@@ -28,5 +41,9 @@ public class BuyItemDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+
+
+
 
 }

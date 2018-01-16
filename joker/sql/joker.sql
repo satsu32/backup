@@ -21,6 +21,7 @@ drop table if exists item_info_transaction;
 create table item_info_transaction(
 id int not null primary key auto_increment,
 item_name varchar(30),
+item_image varchar(255),
 item_price int,
 item_stock int,
 insert_date datetime,
@@ -40,7 +41,12 @@ insert_date datetime,
 delete_date datetime
 );
 
-INSERT INTO item_info_transaction(item_name,item_price,item_stock)
-VALUES("Pen",200,80);
-INSERT INTO login_user_transaction(login_id,login_pass,user_name)
-VALUES("taro","123","test");
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("Pen","./images/0001.jpg",200,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("PC","./images/0002.jpg",200,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("NoteBook","./images/0003.jpg",200,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("テレビ","./images/0001.jpg",200,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ゲーム","./images/0002.jpg",200,80);
+
+
+
+INSERT INTO login_user_transaction(login_id,login_pass,user_name) VALUES("taro","123","test");

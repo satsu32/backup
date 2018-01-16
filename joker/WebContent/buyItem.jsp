@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="./css/buyItem.css"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Style-Type" content="text/css"/>
     <meta http-equiv="Content-Script-Type" content="text/javascript"/>
@@ -25,31 +26,45 @@
         <p>BuyItem</p>
         </div>
         <div class="example">
-      <img src="imgages/Lighthouse.jpg" alt="写真" width="193" height="130">
+      <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
     <div>
     <s:form action="BuyItemAction">
         <table>
           <tr>
+             <td>
+              </td>
               <td>
                  <span>商品名</span>
               </td>
-              <td>
-                 <s:property value="session.buyItem_name" />
+               <td>
+                 <span>商品画像</span>
               </td>
-           </tr>
-           <tr>
               <td>
                   <span>値段</span>
               </td>
               <td>
-                 <s:property  value="session.buyItem_price"/>
-                 <span>円</span>
-               </td>
-            </tr>
-            <tr>
-               <td>
                    <span>在庫</span>
                 </td>
+          </tr>
+
+
+          <s:iterator value="buyItemList">
+          <tr>
+              <td>
+                 <s:checkbox name="checkList" value="checked" fieldValue="%{id}" />
+              </td>
+              <td>
+                 <s:property value="itemName" />
+                 <s:hidden name="ItemName" value="%{ItemName}"/>
+              </td>
+              <td>
+                 <img src='<s:property value="itemImage" />'/>
+                 <s:hidden name="ItemImage" value="%{ItemImage}"/>
+              </td>
+              <td>
+                 <s:property  value="itemPrice"/><span>円</span>
+                 <s:hidden name="itemPrice" value="%{itemPrice}"/>
+               </td>
                 <td>
                    <select name="stock">
                        <option value="1" selected="selected">1</option>
@@ -62,6 +77,8 @@
                    </select>
                   </td>
               </tr>
+          </s:iterator>
+              </table>
               <tr>
                  <td>
                      <span>支払い方法</span>
@@ -77,7 +94,7 @@
                       <s:submit value="購入"/>
                    </td>
                 </tr>
-          </table>
+
        </s:form>
             <div>
                 <span>前画面に戻る場合は</span><a href='<s:url action="HomeAction"/>'>こちら</a>
