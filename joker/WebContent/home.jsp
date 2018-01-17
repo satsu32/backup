@@ -30,7 +30,7 @@
         <div id="top">
             <p>Home<p>
         </div>
-
+          <h1>はじめまして、</h1>
 
      <div>
         <h3>ログイン</h3>
@@ -40,7 +40,9 @@
            <s:submit value="ログイン"/>
         </s:form>
         <br/>
-
+         <s:form action="MyPageAction">
+				<s:submit value="マイページ"/>
+			</s:form>
   </div>
   <div id="footer">
      <div id="pr">

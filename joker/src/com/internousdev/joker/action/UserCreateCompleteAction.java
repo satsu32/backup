@@ -8,7 +8,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.internousdev.joker.dao.UserCreateCompleteDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class UesrCreateCompleteAction extends ActionSupport implements SessionAware {
+public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
 
 	private String loginUserId;
 	private String loginPassword;
