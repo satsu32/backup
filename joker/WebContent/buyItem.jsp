@@ -14,6 +14,23 @@
     <meta charset="utf-8">
 <title>BuyItem画面</title>
 <style type="text/css">
+
+#searchsubmit {
+     border: 1px solid #006489;
+     background:#00acee;
+     color: #fff;
+     border-radius: 4px;
+     -moz-border-radius: 4px;
+     -webkit-border-radius: 4px;
+     box-shadow:0 2px 0 #006E96;
+     text-shadow: 1px 1px 2px #000000;
+     text-decoration: none
+     padding: 5px 10px;
+     cursor: pointer;
+     display: inline-block;
+     }
+
+
 </style>
 </head>
 <body>
@@ -21,14 +38,24 @@
        <div id="pr">
        </div>
     </div>
+
+
     <div id="main">
         <div id="top">
         <p>BuyItem</p>
         </div>
         <div class="example">
       <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
+<div>
+<form action="SearchAction" method="post">
+      <p>商品検索</p>
+  <input type="search" name="search" placeholder="キーワードを入力">
+  <input type="submit" name="submit" id="searchsubmit" value="search">
+</form>
+</div>
     <div>
     <s:form action="BuyItemAction">
+        <br>
         <table>
           <tr>
              <td>
@@ -97,6 +124,9 @@
 
        </s:form>
             <div>
+                 <s:form action="MyPageAction">
+				<s:submit value="マイページ"/>
+			</s:form>
                 <span>前画面に戻る場合は</span><a href='<s:url action="HomeAction"/>'>こちら</a>
             </div>
         </div>
