@@ -39,29 +39,21 @@ public class LoginAction extends ActionSupport implements SessionAware {
 	 * 実行メソッド
 	 */
 	public String execute() {
-
 		 // 処理結果を格納
 		String result = ERROR;
-
 		 // ログイン情報取得DAO
 		LoginDAO loginDAO = new LoginDAO();
-
 		 // ログイン情報格納IDTO
 		LoginDTO loginDTO = new LoginDTO();
+		//ログイン実行
+		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
+		session.put("loginUser", loginDTO);
 
 		 // アイテム情報を取得
 		BuyItemDAO buyItemDAO = new BuyItemDAO();
-
-		//ログイン実行
-		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
-
-		session.put("loginUser", loginDTO);
-
 		//ログイン情報を取得
 		if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
-
 			buyItemList = buyItemDAO.getBuyItemList();
-
 			result = SUCCESS;
 
 			//アイテム情報を取得
@@ -70,12 +62,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 //			session.put("id",buyItemDTO.getId());
 //			session.put("buyItem_name",buyItemDTO.getItemName());
 //			session.put("buyItem_price",buyItemDTO.getItemPrice());
-
-
-
-
-			return result;
 		}
+//		System.out.println("LOGINACTION:"+result);
 		return result;
 	}
 

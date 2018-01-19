@@ -77,6 +77,9 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 p{
    color:#FFFFFF
    }
+h4{
+   color:#FF0000
+   }
 
 </style>
 </head>
@@ -87,14 +90,14 @@ p{
      </div>
      <div id="main">
          <div id="top">
-            <p>UserCreate</p>
+            <p>ユーザー登録</p>
          </div>
          <div>
              <s:if test="errorMessage !=''">
-                <s:property value="errorMessage" escape="false"/>
+                <h4><s:property value="errorMessage" escape="false"/></h4>
              </s:if>
              <table>
-             <s:form action="UserCreateConfirmAction">
+             <s:form id="form" name="form" action="UserCreateConfirmAction">
                 <tr>
                    <td>
                     <p><label>ログインID:</label></p>
@@ -123,9 +126,13 @@ p{
                 </s:form>
                 </table>
                 <div>
-                   <p><span>前画面に戻る場合は</span><a href='<s:url
-                    action="HomeAction"/>'>こちら</a></p>
-                 </div>
+                   <p><span>前画面に戻る場合は</span></p>
+                   <s:form  id="form" name="form" action="LoginAction">
+                     <div><br>
+   					   <input type="submit"  class="btn btn-primary btn-block btn-large" value="こちら"/>
+   					 </div>
+   				    </s:form>
+                </div>
              </div>
            </div>
 </body>

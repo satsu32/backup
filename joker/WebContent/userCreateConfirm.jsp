@@ -96,13 +96,14 @@ p{
          <div>
              <h3>登録する内容は以下でよろしいですか??</h3>
              <table>
-                 <s:form action="UserCreateCompleteAction">
+                 <s:form id="form" name="form" action="UserCreateCompleteAction">
                     <tr id="box">
                        <td>
                             <p><label>ログインID:</label></p>
                         </td>
                         <td>
                            <p><s:property value="loginUserId" escape="false"/></p>
+                           <s:hidden name="loginUserId" value="%{loginUserId}"/>
                         </td>
                      </tr>
                      <tr id="box">
@@ -111,6 +112,7 @@ p{
                          </td>
                          <td>
                            <p><s:property value="loginPassword" escape="false"/></p>
+                           <s:hidden name="loginPassword" value="%{loginPassword}"/>
                          </td>
                       </tr>
                       <tr id="box">
@@ -119,6 +121,7 @@ p{
                          </td>
                          <td>
                              <p><s:property value="userName" escape="false"/></p>
+                             <s:hidden name="userName" value="%{userName}"/>
                           </td>
                        </tr>
                        <tr id="box">

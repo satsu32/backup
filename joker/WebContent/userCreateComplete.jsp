@@ -78,7 +78,7 @@ p{
    color:#FFFFFF
    }
 h3{
-   color:#FF0000
+   color:#FFFF00
    }
 
 </style>
@@ -96,7 +96,9 @@ h3{
            <h3>ユーザーの登録が完了致しました。</h3>
 
            <div>
-              <a href='<s:url action="HomeAction" />'>ログインへ</a>
+              <s:form  id="form" name="form" action="LoginAction">
+                    <input type="submit"  class="btn btn-primary btn-block btn-large" value="ログインへ"/>
+              </s:form><a href='login.jsp'>ログインへ</a>
            </div>
         </div>
     </div>

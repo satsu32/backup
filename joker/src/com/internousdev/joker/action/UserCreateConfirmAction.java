@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.joker.dao.UserCreateConfirmDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
@@ -12,21 +13,33 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	private String loginPassword;
 	private String userName;
 	public  Map<String,Object> session;
-	private String result;
 	private String errorMessage;
 
 	/**
 	 * 入力情報格納処理
 	 */
 	public String execute(){
+		String result=ERROR;
+//		System.out.println("UserCreateConfirmAction-----------");
+//		System.out.println(loginUserId);
+//		System.out.println(loginPassword);
+//		System.out.println(userName);
+//		System.out.println("----------------------------------");
 
-		result = SUCCESS;
+
 
 		if(!(loginUserId.equals("")) &&!(loginPassword.equals("")) &&!(userName.equals(""))){
-			session.put("loginUserId", loginUserId);
-			session.put("loginPassword",loginPassword);
-			session.put("userName",userName);
-
+			UserCreateConfirmDAO dao=new UserCreateConfirmDAO();
+			boolean isExistsLoginUserId = dao.isExistsLoginUserId(loginUserId);
+			if(isExistsLoginUserId){
+				setErrorMessage("既に登録されたユーザーです");
+				result=ERROR;
+			}else{
+				session.put("loginUserId", loginUserId);
+				session.put("loginPassword",loginPassword);
+				session.put("userName",userName);
+				result = SUCCESS;
+			}
 		} else {
 
 			setErrorMessage("未入力の項目があります。");
@@ -34,34 +47,45 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 		}
 		return result;
 	}
-	public String getLoginUserId(){
+
+	public String getLoginUserId() {
 		return loginUserId;
 	}
+
 	public void setLoginUserId(String loginUserId) {
 		this.loginUserId = loginUserId;
 	}
-    public String getLoginPassword() {
-    	return loginPassword;
-    }
-    public void setLoginPassword(String loginPassword){
-    	this.loginPassword = loginPassword;
-    }
 
-    public String getUsername(){
-    	return userName;
-    }
-    public void setUserName(String userName){
-    	this.userName = userName;
-    }
-    @Override
-    public  void setSession(Map<String, Object>session) {
-    	this.session = session;
-    }
+	public String getLoginPassword() {
+		return loginPassword;
+	}
 
-    public String getErrorMessage() {
-    	return errorMessage;
-    }
-    public void setErrorMessage(String errorMessage) {
-    	this.errorMessage = errorMessage;
-    }
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
 }

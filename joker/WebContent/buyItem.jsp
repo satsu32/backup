@@ -29,8 +29,9 @@
      cursor: pointer;
      display: inline-block;
      }
-
-
+p{ color:#FF0000;
+   font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
+  }
 </style>
 </head>
 <body>
@@ -54,11 +55,19 @@
 </form>
 </div>
     <div>
+    <s:if test="errorMessage!=null">
+    	<p><s:property value="errorMessage"/></p>
+    </s:if>
+
     <s:form action="BuyItemAction">
+        <s:hidden name="loginUserId" value="%{loginUserId}"/>
         <br>
         <table>
           <tr>
              <td>
+              </td>
+              <td>
+                 <span>商品ID</span>
               </td>
               <td>
                  <span>商品名</span>
@@ -80,6 +89,9 @@
               <td>
                  <s:checkbox name="checkList" value="checked" fieldValue="%{id}" />
               </td>
+              <td>
+                <s:property value="id"/>
+                <s:hidden name="id" value="%{id}"/>
               <td>
                  <s:property value="itemName" />
                  <s:hidden name="ItemName" value="%{ItemName}"/>

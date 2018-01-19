@@ -33,16 +33,20 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 	 */
 	private String deleteFlg;
 	private String message;
+    private String id;
+	private String loginUserId;
 
 	public String execute() throws SQLException{
-		if(!session.containsKey("id")){
-			return ERROR;
-		}
+//		if(!session.containsKey("id")){
+//			return ERROR;
+//		}
 
+		System.out.println(id);
+		System.out.println(loginUserId);
 		//商品履歴を削除しない場合
 		if(deleteFlg == null){
-			String item_transaction_id = session.get("id").toString();
-			String user_master_id = session.get("login_user_id").toString();
+			String item_transaction_id = id;
+			String user_master_id = loginUserId;
 
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
 
@@ -60,8 +64,8 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 
 	public void delete() throws SQLException{
 
-		String item_transaction_id = session.get("id").toString();
-		String user_master_id = session.get("login_user_id").toString();
+		String item_transaction_id = id;
+		String user_master_id = loginUserId;
 
 		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
 
@@ -72,6 +76,25 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 			setMessage("商品情報の削除に失敗しました。");
 		}
 	}
+
+
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getLoginUserId() {
+		return loginUserId;
+	}
+
+	public void setLoginUserId(String loginUserId) {
+		this.loginUserId = loginUserId;
+	}
+
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}

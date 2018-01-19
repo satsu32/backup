@@ -35,6 +35,7 @@ public class MyPageDAO {
 	    			 dto.setTotalCount(resultSet.getString("total_count"));
 	    			 dto.setPayment(resultSet.getString("pay"));
 	    			 dto.setInsert_date(resultSet.getString("insert_date"));
+	    			 dto.setLoginUserId(resultSet.getString("loginUserId"));
 	    			 myPageDTO.add(dto);
 	    		 }
 

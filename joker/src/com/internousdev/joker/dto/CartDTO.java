@@ -1,7 +1,7 @@
 package com.internousdev.joker.dto;
 
 public class CartDTO {
-	public int id;
+	public String id;
 	public String itemName;
 	public String itemImage;
 	public String itemPrice;
@@ -9,10 +9,10 @@ public class CartDTO {
 	public boolean check;
 	public int subTotal;
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getItemName() {

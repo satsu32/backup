@@ -14,20 +14,21 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private String loginPassword;
 	private String userName;
 	public Map<String,Object> session;
-	private String result;
-	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
 
 	/**
 	 * ユーザー情報登録処理
 	 */
 	public String execute() throws SQLException {
+		String result=ERROR;
 
-		userCreateCompleteDAO.cerateUser(session.get("loginUserId").toString(),
-				session.get("loginPassword").toString(),
-				session.get("userName").toString());
+		UserCreateCompleteDAO dao = new UserCreateCompleteDAO();
+		int count = dao.cerateUser(loginUserId,loginPassword,userName);
 
-		result = SUCCESS;
-
+		if(count>0){
+			result = SUCCESS;
+		}else{
+			result = ERROR;
+		}
 		return result;
 	}
 	public String getLoginUserId(){

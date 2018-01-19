@@ -9,8 +9,15 @@ public class MyPageDTO {
 	public String userName;
 	public String id;
 	public String insert_date;
+	public String loginUserId;
 
 
+	public String getLoginUserId() {
+		return loginUserId;
+	}
+	public void setLoginUserId(String loginUserId) {
+		this.loginUserId = loginUserId;
+	}
 	public String getItemName() {
 		return itemName;
 	}

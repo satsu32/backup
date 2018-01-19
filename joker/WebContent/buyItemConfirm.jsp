@@ -23,16 +23,19 @@
     </div>
     <div id="main">
         <div id="top">
-        <p>BuyItem</p>
+        <p>BuyItemConfirm</p>
         </div>
         <div class="example">
       <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
     <div>
     <s:form action="BuyItemConfirmAction">
+        <s:hidden name="loginUserId" value="%{loginUserId}"/>
         <table>
           <tr>
              <td>
               </td>
+              <td>
+              	<span>商品ID</span>
               <td>
                  <span>商品名</span>
               </td>
@@ -51,6 +54,10 @@
           <s:iterator value="cartList">
           <s:if test="check==true">
           <tr>
+          	  <td>
+          	  	<s:property value="id"/>
+          	  	<s:hidden name="id" value="%{id}"/>
+          	  </td>
               <td>
                  <s:property value="itemName" />
                  <s:hidden name="itemName" value="%{itemName}"/>
@@ -77,6 +84,7 @@
                  </td>
                  <td>
                     <s:property value="payment"/>
+                    <s:hidden name="payment" value="%{payment}"/>
                   </td>
                 </tr>
                 <tr>
