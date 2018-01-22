@@ -37,9 +37,9 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 	private String loginUserId;
 
 	public String execute() throws SQLException{
-//		if(!session.containsKey("id")){
-//			return ERROR;
-//		}
+		if(!session.containsKey("id")){
+			return ERROR;
+		}
 
 		System.out.println(id);
 		System.out.println(loginUserId);

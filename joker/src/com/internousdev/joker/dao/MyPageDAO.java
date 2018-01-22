@@ -36,6 +36,7 @@ public class MyPageDAO {
 	    			 dto.setPayment(resultSet.getString("pay"));
 	    			 dto.setInsert_date(resultSet.getString("insert_date"));
 	    			 dto.setLoginUserId(resultSet.getString("loginUserId"));
+	    			 dto.setUserName(resultSet.getString("userName"));
 	    			 myPageDTO.add(dto);
 	    		 }
 

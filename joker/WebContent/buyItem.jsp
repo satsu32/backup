@@ -43,7 +43,11 @@ p{ color:#FF0000;
 
     <div id="main">
         <div id="top">
-        <p>BuyItem</p>
+        <div>
+           <s:form action="GoHomeAction">
+                <p><s:submit value="BuyItem" /></p>
+           </s:form>
+       </div>
         </div>
         <div class="example">
       <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">

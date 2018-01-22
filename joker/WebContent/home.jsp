@@ -77,9 +77,11 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 h1{
     color:#FFFFFF
+    font-family: "Hiragino Sans","ヒラギノ角ゴシック"; font-weight: 400;
     }
 h2{
     color:#FFFFFF
+    font-family: "Hiragino Sans","ヒラギノ角ゴシック"; font-weight: 400;
     }
 
 </style>
@@ -95,9 +97,13 @@ h2{
      </div>
      <div id="main">
         <div id="top">
-            <h2>Home</h2>
+            <div>
+           <s:form action="GoHomeAction">
+              <h1><s:submit value="Home" /></h1>
+           </s:form>
+       </div>
         </div>
-          <h2>Hello</h2>
+          <h2>Wel</h2>
 
 <div class="login">
 	<h1>Login</h1>
@@ -107,13 +113,6 @@ h2{
         <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
     </s:form>
 </div>
-
-
-        <br/>
-         <s:form action="MyPageAction">
-				<s:submit value="マイページ"/>
-			</s:form>
-
   </div>
   <div id="footer">
      <div id="pr">
