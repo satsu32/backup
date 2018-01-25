@@ -30,14 +30,13 @@
              <div class="login">
 			<h1>Login</h1>
     		<s:form  id="form" name="form" action="LoginAction">
-    			<input type="text" name="loginUserId" placeholder="UserID" required="required" />
-        		<input type="password" name="loginPassword" placeholder="Password"  required="required" />
-        		<button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
+    			<s:textfield name="loginUserId" placeholder="UserID" required="required" />
+				<s:password name="loginPassword" placeholder="Password"  required="required" />
+				<s:submit class="btn btn-primary btn-block btn-large">Let me in.</s:submit>
 				<div><br>
-   					<input type="submit"  class="btn btn-primary btn-block btn-large" value="新規ユーザー登録" onclick="goUserCreateAction();"/>
+					<s:submit class="btn btn-primary btn-block btn-large" value="新規ユーザー登録" onclick="goUserCreateAction();"/>
     			</div>
-
-		    </s:form>
+			</s:form>
 		</div>
     </div>
 	</div>

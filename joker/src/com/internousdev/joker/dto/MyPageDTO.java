@@ -2,14 +2,15 @@ package com.internousdev.joker.dto;
 
 public class MyPageDTO {
 
-	public String itemName;
-	public String totalPrice;
-	public String totalCount;
-	public String payment;
-	public String userName;
-	public String id;
-	public String insert_date;
-	public String loginUserId;
+	private String itemName;
+	private String itemImage;
+	private String totalPrice;
+	private String totalCount;
+	private String payment;
+	private String userName;
+	private String id;
+	private String insert_date;
+	private String loginUserId;
 
 
 	public String getLoginUserId() {
@@ -25,6 +26,12 @@ public class MyPageDTO {
 		this.itemName = itemName;
 	}
 
+	public String getItemImage() {
+		return itemImage;
+	}
+	public void setItemImage(String itemImage) {
+		this.itemImage = itemImage;
+	}
 	public String getTotalPrice() {
 		return totalPrice;
 	}

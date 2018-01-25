@@ -1,48 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
+    <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./css/buyItem.css"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta http-equiv="Content-Style-Type" content="text/css"/>
-<meta http-equiv="Content-Script-Type" content="text/javascript"/>
-<meta http-equiv="imagetoolbar" content="no"/>
-<meta name="description" content="" />
-<meta name="keywords" content=""/>
-<meta charset="utf-8">
-<script>
-function goSearchAction(){
-    document.getElementById('form').action="SearchAction";
-}
-function goGoHomeAction(){
-    document.getElementById('form').action="GoHomeAction";
-}
+<meta charset="UTF-8">
+ 	<script>
 function goBuyItemAction(){
-    document.getElementById('form').action="BuyItemAction";
+	document.getElementById('form').action = "BuyItemAction";
 }
-function goMyPageAction(){
-    document.getElementById('form').action="MyPageAction";
+function goSearchAction(){
+	document.getElementById('form').action = "SearchAction";
 }
 
 </script>
-
-
-
-<title>BuyItem画面</title>
+<title>Insert title here</title>
 </head>
 <body>
+
 <s:include value="header.jsp"/>
+<h1>商品詳細</h1>
 
-	<s:form id="form" name="form" action="HomeAction">
-		<div id="header">
-			<div id="pr"></div>
-		</div>
-			<div id="top">
+	<s:form id="form" name="form" action="BuyItemAction">
 
-		</div>
-			<img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
 			<div>
 				<p>商品検索</p>
 				<input type="search" name="search" placeholder="キーワードを入力">
@@ -63,13 +43,11 @@ function goMyPageAction(){
 					<td><span>値段</span></td>
 					<td><span>在庫</span></td>
 				</tr>
-				<s:iterator value="buyItemList">
 				<tr>
-					<td><s:checkbox name="checkList" value="checked" fieldValue="%{id}" /></td>
 					<td><s:property value="id"/><s:hidden name="id" value="%{id}"/><td>
 						<s:property value="itemName" /><s:hidden name="ItemName" value="%{ItemName}"/>
 					</td>
-					<td><img src='<s:property value="itemImage" />'/><s:hidden name="ItemImage" value="%{ItemImage}"/></td>
+					<td><img src='<s:property value="itemImage" />' width="200px" height="200px"/><s:hidden name="ItemImage" value="%{ItemImage}"/></td>
 					<td><s:property  value="itemPrice"/><span>円</span><s:hidden name="itemPrice" value="%{itemPrice}"/>
 					</td>
 					<td><select name="stock">
@@ -83,7 +61,6 @@ function goMyPageAction(){
 						</select>
 					</td>
 				</tr>
-				</s:iterator>
 				</table>
 				<table>
 				<tr>
@@ -94,11 +71,14 @@ function goMyPageAction(){
 				</td>
 				</tr>
 				<tr>
-				<td><s:submit value="購入" onclick="goBuyItemAction();"/></td>
+				<td><s:submit value="購入"/></td>
 				 </tr>
 			</table>
 			<span>前画面に戻る場合は</span><s:a href="javascript:void(0)" onclick="document.form.submit();return false;">こちら</s:a>
 			</div>
        </s:form>
+
 </body>
+
+
 </html>

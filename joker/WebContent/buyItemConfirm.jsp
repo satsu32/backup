@@ -17,6 +17,8 @@
 </style>
 </head>
 <body>
+<s:include value="header.jsp"/>
+
     <div id="header">
        <div id="pr">
        </div>
@@ -29,6 +31,7 @@
       <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
     <div>
     <s:form action="BuyItemConfirmAction">
+    	<s:hidden name="buySingleFlg" value="%{buySingleFlg}"/>
         <s:hidden name="loginUserId" value="%{loginUserId}"/>
         <table>
           <tr>
@@ -52,7 +55,9 @@
 
 
           <s:iterator value="cartList">
+          <!--
           <s:if test="check==true">
+          -->
           <tr>
           	  <td>
           	  	<s:property value="id"/>
@@ -75,7 +80,9 @@
                	<s:hidden name="stock" value="%{stock}"/>
                   </td>
               </tr>
+              <!--
               </s:if>
+               -->
           </s:iterator>
               </table>
               <tr>

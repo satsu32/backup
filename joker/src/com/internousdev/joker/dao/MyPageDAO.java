@@ -12,16 +12,58 @@ import com.internousdev.joker.util.DBConnector;
 
 public class MyPageDAO {
 
-	   private DBConnector dbConnector = new DBConnector();
-	   private Connection connection = dbConnector.getConnection();
+	   DBConnector db = new DBConnector();
+	   Connection con = db.getConnection();
+
+
+
+	     public ArrayList<MyPageDTO> selectUserBuyItemTransaction(String user_master_id) throws SQLException {
+	  	   DBConnector db = new DBConnector();
+		   Connection con = db.getConnection();
+	    	 ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
+
+	    	 String sql = "SELECT ubit.id, iit.item_name, iit.item_image, ubit.total_price,ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id =iit.id where ubit.user_master_id = ? ORDER BY insert_date DESC";
+
+	    	 try {
+	    		 PreparedStatement ps = con.prepareStatement(sql);
+	    		 ps.setString(1, user_master_id);
+
+	    		 ResultSet rs = ps.executeQuery();
+
+	    		 while(rs.next()){
+	    			 MyPageDTO dto = new MyPageDTO();
+	    			 dto.setId(rs.getString("id"));
+	    			 dto.setItemName(rs.getString("item_name"));
+	    			 dto.setItemImage(rs.getString("item_image"));
+	    			 dto.setTotalPrice(rs.getString("total_price"));
+	    			 dto.setTotalCount(rs.getString("total_count"));
+	    			 dto.setPayment(rs.getString("pay"));
+	    			 dto.setInsert_date(rs.getString("insert_date"));
+//	    			 dto.setLoginUserId(resultSet.getString("loginUserId"));
+//	    			 dto.setUserName(resultSet.getString("userName"));
+	    			 myPageDTO.add(dto);
+	    		 }
+
+
+	    	 } catch(Exception e){
+	    		 e.printStackTrace();
+	    	 } finally{
+	    		 con.close();
+	    	 }
+	    	 return myPageDTO;
+	     }
+
+
 
 	     public ArrayList<MyPageDTO> getMyPageUserInfo(String item_transaction_id, String user_master_id) throws SQLException {
+	  	   DBConnector db = new DBConnector();
+		   Connection con = db.getConnection();
 	    	 ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 
 	    	 String sql = "SELECT ubit.id, iit.item_name, ubit.total_price,ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id =iit.id where ubit.item_transaction_id =? AND ubit.user_master_id = ? ORDER BY insert_date DESC";
 
 	    	 try {
-	    		 PreparedStatement preparedStatement = connection.prepareStatement(sql);
+	    		 PreparedStatement preparedStatement = con.prepareStatement(sql);
 	    		 preparedStatement.setString(1, item_transaction_id);
 	    		 preparedStatement.setString(2, user_master_id);
 
@@ -44,18 +86,23 @@ public class MyPageDAO {
 	    	 } catch(Exception e){
 	    		 e.printStackTrace();
 	    	 } finally{
-	    		 connection.close();
+	    		 con.close();
 	    	 }
 	    	 return myPageDTO;
 	     }
-	     public int buyItemHistoryDelete(String item_transaction_id, String user_master_id) throws SQLException {
 
+
+
+
+	     public int buyItemHistoryDelete(String item_transaction_id, String user_master_id) throws SQLException {
+	  	   DBConnector db = new DBConnector();
+		   Connection con = db.getConnection();
 	    	 String sql = "DELETE FROM user_buy_item_transaction where item_transaction_id =? AND user_master_id = ?";
 
 	    	 PreparedStatement preparedStatement;
 	    	 int result =0;
 	    	 try {
-	    		  preparedStatement = connection.prepareStatement(sql);
+	    		  preparedStatement = con.prepareStatement(sql);
 	    		  preparedStatement.setString(1, item_transaction_id);
 	    		  preparedStatement.setString(2, user_master_id);
 
@@ -64,7 +111,7 @@ public class MyPageDAO {
 	    		 e.printStackTrace();
 
 	    	 }finally {
-	    		 connection.close();
+	    		 con.close();
 	    	 }
 	    	 return result;
 	     }

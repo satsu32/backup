@@ -16,6 +16,8 @@
 	<title>MyPage画面</title>
 </head>
 <body>
+<s:include value="header.jsp"/>
+
    <div id="header">
          <div id="pr">
          </div>
@@ -33,6 +35,7 @@
           <table border="1">
           <tr>
               <th>商品名</th>
+              <th>商品画像</th>
               <th>値段</th>
               <th>購入個数</th>
               <th>支払い方法</th>
@@ -43,6 +46,7 @@
 
                  <tr>
                      <td><s:property value="itemName"/></td>
+                     <td><img src='<s:property value="itemImage" />' width="100px" height="100px"/></td>
                      <td><s:property value="totalPrice"/>
                      <span>円</span>
                      </td>
@@ -62,7 +66,7 @@
               <h3><s:property value="message"/></h3>
           </s:if>
               <div id="text-right">
-                 <p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>
+                 <p>Homeへ戻る場合は<a href='<s:url action="IndexAction"/>'>
                  こちら</a></p>
                </div>
             </div>

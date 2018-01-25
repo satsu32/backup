@@ -3,3 +3,22 @@ img {
 width: 70px;
 height: 70px;
 }
+
+#searchsubmit {
+     border: 1px solid #006489;
+     background:#00acee;
+     color: #fff;
+     border-radius: 4px;
+     -moz-border-radius: 4px;
+     -webkit-border-radius: 4px;
+     box-shadow:0 2px 0 #006E96;
+     text-shadow: 1px 1px 2px #000000;
+     text-decoration: none
+     padding: 5px 10px;
+     cursor: pointer;
+     display: inline-block;
+}
+
+p{ color:#FF0000;
+   font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
+}

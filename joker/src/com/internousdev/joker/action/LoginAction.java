@@ -48,6 +48,8 @@ public class LoginAction extends ActionSupport implements SessionAware {
 		//ログイン実行
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
 		session.put("loginUser", loginDTO);
+		session.put("userName", loginDTO.getUserName());
+		session.put("loginFlg", loginDTO.getLoginFlg());
 
 		 // アイテム情報を取得
 		BuyItemDAO buyItemDAO = new BuyItemDAO();

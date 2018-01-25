@@ -37,19 +37,20 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 	private String loginUserId;
 
 	public String execute() throws SQLException{
-		if(!session.containsKey("id")){
-			return ERROR;
-		}
+		System.out.println("MyPageAction-------");
+//		if(!session.containsKey("id")){
+//			return ERROR;
+//		}
 
 		System.out.println(id);
 		System.out.println(loginUserId);
 		//商品履歴を削除しない場合
 		if(deleteFlg == null){
-			String item_transaction_id = id;
+//			String item_transaction_id = id;
 			String user_master_id = loginUserId;
 
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
-
+//			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+			myPageList = myPageDAO.selectUserBuyItemTransaction(user_master_id);
 			Iterator<MyPageDTO> iterator = myPageList.iterator();
 			if(!(iterator.hasNext())){
 				myPageList = null;

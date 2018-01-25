@@ -54,6 +54,10 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	private String loginUserId;
 
+	private String search;
+
+	private boolean buySingleFlg;
+
 	public String execute() {
 
 		// 処理結果
@@ -70,7 +74,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		System.out.println(pay);
 		System.out.println("-------------------------");
 
-		if(checkList==null){
+		if(checkList==null || buySingleFlg == false){
 			errorMessage="商品が何も選択されていません。\n";
 			BuyItemDAO buyItemDAO=new BuyItemDAO();
 			buyItemList = buyItemDAO.getBuyItemList();
@@ -79,7 +83,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		}
 
 		// 商品が選択されたか？
-		if (checkList.size() <= 0) {
+		if (checkList.size() <= 0 || buySingleFlg == false) {
 			result = ERROR;
 		}
 
@@ -303,4 +307,31 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
+
+
+	public String getSearch() {
+		return search;
+	}
+
+
+
+	public void setSearch(String search) {
+		this.search = search;
+	}
+
+
+
+	public boolean isBuySingleFlg() {
+		return buySingleFlg;
+	}
+
+
+
+	public void setBuySingleFlg(boolean buySingleFlg) {
+		this.buySingleFlg = buySingleFlg;
+	}
+
+
+
 }

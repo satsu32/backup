@@ -17,6 +17,8 @@
 </style>
 </head>
 <body>
+<s:include value="header.jsp"/>
+
    <div id="header">
          <div id="pr">
          </div>
