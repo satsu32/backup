@@ -71,5 +71,20 @@
 	<result name="success">buyItem.jsp</result>
 </action>
 
+<action name="PasswordResetAction" class="com.internousdev.joker.action.PasswordResetAction" method="execute">
+      <result name="success">passwordReset.jsp</result>
+      <result name="error">home.jsp</result>
+</action>
+
+<action name="PasswordResetConfirmAction" class="com.internousdev.joker.action.PasswordResetConfirmAction" method="execute">
+      <result name="success">passwordResetConfirm.jsp</result>
+      <result name="error">passwordReset.jsp</result>
+</action>
+
+<action name="PasswordResetCompleteAction" class="com.internousdev.joker.action.PasswordResetCompleteAction" method="execute">
+      <result name="success">passwordResetComplete.jsp</result>
+      <result name="error">passwordReset.jsp</result>
+</action>
+
 </package>
 </struts>

@@ -11,12 +11,12 @@ import com.internousdev.joker.dao.MyPageDAO;
 import com.internousdev.joker.dto.MyPageDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class MyPageAction  extends ActionSupport implements SessionAware{
+public class MyPageAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * ログイン情報を格納
 	 */
-	public Map<String,Object> session;
+	public Map<String, Object> session;
 
 	/**
 	 * マイページ情報取得DAO
@@ -26,59 +26,76 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 	/**
 	 * マイページ情報格納DTO
 	 */
-	public ArrayList<MyPageDTO> myPageList =new ArrayList<MyPageDTO>();
+	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 
 	/**
 	 * 削除フラグ
 	 */
 	private String deleteFlg;
 	private String message;
-    private String id;
+	private String id;
 	private String loginUserId;
 
-	public String execute() throws SQLException{
+	public String execute() throws SQLException {
+		String result=ERROR;
+		String user_master_id = null;
 		System.out.println("MyPageAction-------");
-//		if(!session.containsKey("id")){
-//			return ERROR;
-//		}
+		// if(!session.containsKey("id")){
+		// return ERROR;
+		// }
 
-		System.out.println(id);
-		System.out.println(loginUserId);
-		//商品履歴を削除しない場合
-		if(deleteFlg == null){
-//			String item_transaction_id = id;
-			String user_master_id = loginUserId;
-
-//			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+		// System.out.println(id);
+		System.out.println("LOGINUSERID : " + loginUserId);
+		System.out.println("DELETEFLG : " + deleteFlg);
+		// 商品履歴を削除しない場合
+		if (deleteFlg == null) {
+			// String item_transaction_id = id;
+			user_master_id = loginUserId;
+			System.out.println("USERMASTERID --->>> 登録完了");
+			// myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id,
+			// user_master_id);
 			myPageList = myPageDAO.selectUserBuyItemTransaction(user_master_id);
 			Iterator<MyPageDTO> iterator = myPageList.iterator();
-			if(!(iterator.hasNext())){
+			if (!(iterator.hasNext())) {
 				myPageList = null;
 			}
-			//商品履歴を削除する場合
-	}else if(deleteFlg.equals("1")){
-		delete();
+
+			result = SUCCESS;
+
+			// 商品履歴を削除する場合
+		} else if (deleteFlg.equals("1")) {
+			System.out.println(user_master_id + "の商品履歴を削除します。");
+			boolean b = this.delete();
+			if(b){
+				deleteFlg=null;
+				result=SUCCESS;
+			}else{
+				result=ERROR;
+			}
+		}
+
+		return result;
 	}
-      String result = SUCCESS;
-      return result;
-}
 
-	public void delete() throws SQLException{
-
-		String item_transaction_id = id;
+	public boolean delete() throws SQLException {
+		boolean result=false;
+		// String item_transaction_id = id;
 		String user_master_id = loginUserId;
 
-		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
+		// int res = myPageDAO.buyItemHistoryDelete(item_transaction_id,
+		// user_master_id);
+		int res = myPageDAO.deleteBuyItemHistory(user_master_id);
 
-		if(res >0){
+		if (res > 0) {
 			myPageList = null;
 			setMessage("商品情報を正しく削除しました。");
-		}else if(res ==0) {
+			result=true;
+		} else if (res == 0) {
 			setMessage("商品情報の削除に失敗しました。");
+			result=false;
 		}
+		return result;
 	}
-
-
 
 	public String getId() {
 		return id;
@@ -99,15 +116,19 @@ public class MyPageAction  extends ActionSupport implements SessionAware{
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}
-	public void setDeleteFlg(String deleteFlg){
+
+	public void setDeleteFlg(String deleteFlg) {
 		this.deleteFlg = deleteFlg;
 	}
-	public void setSession(Map<String, Object> session){
+
+	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-	public  String getMessage() {
+
+	public String getMessage() {
 		return message;
 	}
+
 	public void setMessage(String message) {
 		this.message = message;
 	}

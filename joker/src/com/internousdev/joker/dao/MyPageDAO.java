@@ -22,7 +22,7 @@ public class MyPageDAO {
 		   Connection con = db.getConnection();
 	    	 ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 
-	    	 String sql = "SELECT ubit.id, iit.item_name, iit.item_image, ubit.total_price,ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id =iit.id where ubit.user_master_id = ? ORDER BY insert_date DESC";
+	    	 String sql = "SELECT ubit.id, iit.item_name, iit.item_image, ubit.total_price,ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id =iit.id where ubit.user_master_id = ? AND ubit.delete_date IS NULL ORDER BY insert_date DESC";
 
 	    	 try {
 	    		 PreparedStatement ps = con.prepareStatement(sql);
@@ -60,7 +60,7 @@ public class MyPageDAO {
 		   Connection con = db.getConnection();
 	    	 ArrayList<MyPageDTO> myPageDTO = new ArrayList<MyPageDTO>();
 
-	    	 String sql = "SELECT ubit.id, iit.item_name, ubit.total_price,ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id =iit.id where ubit.item_transaction_id =? AND ubit.user_master_id = ? ORDER BY insert_date DESC";
+	    	 String sql = "SELECT ubit.id, iit.item_name, ubit.total_price,ubit.total_count, ubit.pay, ubit.insert_date FROM user_buy_item_transaction ubit LEFT JOIN item_info_transaction iit ON ubit.item_transaction_id =iit.id where ubit.item_transaction_id =? AND ubit.user_master_id = ? AND ubit.delete_date IS NULL  ORDER BY insert_date DESC";
 
 	    	 try {
 	    		 PreparedStatement preparedStatement = con.prepareStatement(sql);
@@ -115,4 +115,28 @@ public class MyPageDAO {
 	    	 }
 	    	 return result;
 	     }
+
+
+	     public int deleteBuyItemHistory(String user_master_id) throws SQLException {
+	  	   DBConnector db = new DBConnector();
+		   Connection con = db.getConnection();
+//	    	 String sql = "DELETE FROM user_buy_item_transaction where user_master_id = ?";
+		     String sql = "update user_buy_item_transaction set delete_date = NOW() where user_master_id = ?";
+	    	 PreparedStatement preparedStatement;
+	    	 int result =0;
+	    	 try {
+	    		  preparedStatement = con.prepareStatement(sql);
+	    		  preparedStatement.setString(1, user_master_id);
+
+	    		  result = preparedStatement.executeUpdate();
+	    	 } catch (SQLException e){
+	    		 e.printStackTrace();
+
+	    	 }finally {
+	    		 con.close();
+	    	 }
+	    	 return result;
+	     }
+
+
 }

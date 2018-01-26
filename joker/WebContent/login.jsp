@@ -32,7 +32,7 @@
     		<s:form  id="form" name="form" action="LoginAction">
     			<s:textfield name="loginUserId" placeholder="UserID" required="required" />
 				<s:password name="loginPassword" placeholder="Password"  required="required" />
-				<s:submit class="btn btn-primary btn-block btn-large">Let me in.</s:submit>
+				<s:submit class="btn btn-primary btn-block btn-large" value="Let me in"/>
 				<div><br>
 					<s:submit class="btn btn-primary btn-block btn-large" value="新規ユーザー登録" onclick="goUserCreateAction();"/>
     			</div>

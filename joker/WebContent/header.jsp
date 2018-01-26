@@ -9,8 +9,8 @@
 function goIndexAction(){
 	document.getElementById('form').action = "IndexAction";
 }
-function goBuyItemAction(){
-	document.getElementById('form').action = "BuyItemAction";
+function goItemAction(){
+	document.getElementById('form').action = "ItemAction";
 }
 function goUserCreateAction(){
 	document.getElementById('form').action = "UserCreateAction";
@@ -33,7 +33,7 @@ function goPasswordResetAction(){
 
 
     <s:submit value="ホーム" onclick="goIndexAction();"/>
-    <s:submit value="商品一覧" onclick="goBuyItemAction();"/>
+    <s:submit value="商品一覧" onclick="goItemAction();"/>
     <s:submit value="ユーザー登録" onclick="goUserCreateAction();"/>
 	<s:submit value="マイページ" onclick="goMyPageAction();"/>
 	<s:submit value="パスワード変更" onclick="goPasswordResetAction();"/>

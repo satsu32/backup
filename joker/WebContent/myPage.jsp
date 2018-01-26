@@ -26,11 +26,13 @@
       <div id="top">
          <p>MyPage</p>
       </div>
+      <!--
       <div>
       <s:if test="myPageList == null">
          <h3>ご購入情報はありません。</h3>
       </s:if>
       <s:elseif test="message == null">
+      -->
           <h3>ご購入情報は以下になります。</h3>
           <table border="1">
           <tr>
@@ -46,31 +48,49 @@
 
                  <tr>
                      <td><s:property value="itemName"/></td>
-                     <td><img src='<s:property value="itemImage" />' width="100px" height="100px"/></td>
+
+                     <td><img src='<s:property value="itemImage" />' width="30px" height="30px"/></td>
+
                      <td><s:property value="totalPrice"/>
+
+
                      <span>円</span>
                      </td>
                      <td><s:property value="totalCount"/>
+
+
                      <span>個</span>
                      </td>
                      <td><s:property value="payment"/></td>
+
+
                      <td><s:property value="insert_date"/></td>
+
+
                   </tr>
+
             </s:iterator>
             </table>
             <s:form action="MyPageAction">
+            	<s:hidden name="loginUserId" value="%{loginUserId}"/>
+            	<s:hidden name="deleteFlg" value="1"/>
                 <s:submit value="削除"/>
              </s:form>
+             <!--
           </s:elseif>
+           -->
           <s:if test="message != null">
               <h3><s:property value="message"/></h3>
+
           </s:if>
               <div id="text-right">
                  <p>Homeへ戻る場合は<a href='<s:url action="IndexAction"/>'>
                  こちら</a></p>
                </div>
             </div>
+            <!--
         </div>
+         -->
         <div id="footer">
             <div id="pr">
             </div>
