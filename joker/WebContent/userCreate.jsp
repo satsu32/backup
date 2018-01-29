@@ -11,13 +11,12 @@
     <meta http-equiv="imagetoolbar" content="no" />
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
-<link rel="stylesheet" href="./css/userCreate.css">
+<!--<link rel="stylesheet" href="./css/userCreate.css">-->
 <title>UserCreate画面</title>
 
 </head>
 <body>
-<!--<s:include value="header.jsp"/>-->
-
+<s:include value="header.jsp"/>
 
      <div id="header">
          <div id="pr">
@@ -60,15 +59,7 @@
                   <s:submit value="登録"/>
                 </s:form>
                 </table>
-                <div>
-                   <p><span>前画面に戻る場合は</span></p>
-                   <s:form  id="form" name="form" action="LoginAction">
-                     <div><br>
-   					   <input type="submit"  class="btn btn-primary btn-block btn-large" value="こちら"/>
-   					 </div>
-   				    </s:form>
                 </div>
              </div>
-           </div>
 </body>
 </html>

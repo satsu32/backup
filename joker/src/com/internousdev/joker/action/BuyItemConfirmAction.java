@@ -58,7 +58,12 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 			dto.setTotalCount(String.valueOf(count));
 
 			LoginDTO loginUser = (LoginDTO)session.get("loginUser");
-			dto.setUserMasterId(loginUser.getLoginId());
+			if(loginUserId != null){
+				dto.setUserMasterId(loginUserId);
+			}
+			if(loginUser.getLoginId()!=null){
+				dto.setUserMasterId(loginUser.getLoginId());
+			}
 
 			dto.setPay(payment);
 

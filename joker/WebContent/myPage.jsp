@@ -83,10 +83,6 @@
               <h3><s:property value="message"/></h3>
 
           </s:if>
-              <div id="text-right">
-                 <p>Homeへ戻る場合は<a href='<s:url action="IndexAction"/>'>
-                 こちら</a></p>
-               </div>
             </div>
             <!--
         </div>

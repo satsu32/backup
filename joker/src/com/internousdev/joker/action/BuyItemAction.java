@@ -14,12 +14,17 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware {
 
+	private static final String SINGLE="1";
+	private static final String MULTI="2";
+
 	private Collection<String> checkList;
 
 	private String id;
 	private String itemName;
 	private String itemImage;
 	private String itemPrice;
+
+	private String actionType;
 
 	/**
 	 * アイテム購入個数
@@ -56,7 +61,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	private String search;
 
-	private boolean buySingleFlg;
+//	private boolean buySingleFlg;
 
 	public String execute() {
 
@@ -72,22 +77,40 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		System.out.println(checkList);
 		System.out.println(stock);
 		System.out.println(pay);
+		if(actionType.equals(SINGLE)){
+			System.out.println("ACTION TYPE : SINGLE");
+		} else{
+			System.out.println("ACTION TYPE : MULTI");
+		}
 		System.out.println("-------------------------");
 
-		if(checkList==null || buySingleFlg == false){
-			errorMessage="商品が何も選択されていません。\n";
-			BuyItemDAO buyItemDAO=new BuyItemDAO();
-			buyItemList = buyItemDAO.getBuyItemList();
-			return ERROR;
+
+		if(actionType.equals(SINGLE)){
 
 		}
 
-		// 商品が選択されたか？
-		if (checkList.size() <= 0 || buySingleFlg == false) {
-			result = ERROR;
-		}
 
-
+// TODO あとでみなおし
+//
+//
+//		if(checkList==null){
+//			errorMessage="商品が何も選択されていません。\n";
+//			BuyItemDAO buyItemDAO=new BuyItemDAO();
+//			buyItemList = buyItemDAO.getBuyItemList();
+//			System.out.println(checkList);
+//			System.out.println(buySingleFlg);
+//			System.out.println("===>buyItem.jsp(1)");
+//			return ERROR;
+//
+//		}
+//
+//		// 商品が選択されたか？
+//		if (checkList.size() <= 0 || buySingleFlg == false) {
+//			System.out.println("===>buyItem.jsp(2)");
+//			result = ERROR;
+//		}
+//
+// ここまで
 
 
 
@@ -108,17 +131,40 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 			dto.setStock(stockList[i].toString());
 
 
-			// 選択された商品を抽出する
-			for (String check : checkList) {
-				int itemId = Integer.parseInt(check);
 
-				if(i==(itemId-1)){
-					dto.setCheck(true);
-					cartList.add(dto);
-				}
-//				cartList.get(itemId - 1).check = true;
-//				System.out.println(itemId);
+			if(actionType.equals(SINGLE)){
+				dto.setCheck(true);
+				cartList.add(dto);
 			}
+
+			if(actionType.equals(MULTI)){
+
+			if(checkList==null){
+				errorMessage="商品が何も選択されていません。\n";
+				BuyItemDAO buyItemDAO=new BuyItemDAO();
+				buyItemList = buyItemDAO.getBuyItemList();
+				System.out.println(checkList);
+//				System.out.println(buySingleFlg);
+				System.out.println("===>buyItem.jsp(1)");
+				return ERROR;
+			}
+
+
+
+
+				// 選択された商品を抽出する
+				for (String check : checkList) {
+					int itemId = Integer.parseInt(check);
+
+					if(i==(itemId-1)){
+						dto.setCheck(true);
+						cartList.add(dto);
+					}
+	//				cartList.get(itemId - 1).check = true;
+	//				System.out.println(itemId);
+				}
+			}
+
 
 		}
 //
@@ -184,6 +230,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 			payment = "";
 		}
 
+		System.out.println("===>buyItemConfirm.jsp");
 		result = SUCCESS;
 		return result;
 	}
@@ -322,14 +369,26 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 
 
-	public boolean isBuySingleFlg() {
-		return buySingleFlg;
+//	public boolean isBuySingleFlg() {
+//		return buySingleFlg;
+//	}
+//
+//
+//
+//	public void setBuySingleFlg(boolean buySingleFlg) {
+//		this.buySingleFlg = buySingleFlg;
+//	}
+
+
+
+	public String getActionType() {
+		return actionType;
 	}
 
 
 
-	public void setBuySingleFlg(boolean buySingleFlg) {
-		this.buySingleFlg = buySingleFlg;
+	public void setActionType(String actionType) {
+		this.actionType = actionType;
 	}
 
 

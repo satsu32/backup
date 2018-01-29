@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+input#submit_button{
+	 background-color: #ff0000;
+    // 文字色を白に指定
+    color: #ff00ff;
+    // submitボタンのを枠を非表示にする
+    border-style: none;
+}

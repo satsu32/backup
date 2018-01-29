@@ -13,19 +13,17 @@
     <meta name="keywords" content="" />
     <meta charset="utf-8">
 <link rel="stylesheet" href="./css/userCreateConfirm.css">
-    <title>UserCreateConfirm画面</title>
-
+    <title>ユーザー登録確認画面</title>
 </head>
 <body>
-<!--<s:include value="header.jsp"/>-->
-
+<s:include value="header.jsp"/>
      <div id="header">
          <div id="pr">
          </div>
      </div>
      <div id="main">
          <div id="top">
-             <p>UserCreateConfirm</p>
+             <p>ユーザー登録確認画面</p>
          </div>
          <div>
              <h3>登録する内容は以下でよろしいですか??</h3>

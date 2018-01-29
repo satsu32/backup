@@ -14,7 +14,7 @@ function goSearchAction(){
 }
 
 </script>
-<title>Insert title here</title>
+<title>単一商品選択</title>
 </head>
 <body>
 
@@ -32,7 +32,7 @@ function goSearchAction(){
 				<s:if test="errorMessage!=null">
 					<p><s:property value="errorMessage"/></p>
 				</s:if>
-
+				<s:hidden name="actionType" value="1"/><br>
 				<s:hidden name="loginUserId" value="%{loginUserId}"/><br>
 				<table>
 				<tr>
@@ -71,12 +71,18 @@ function goSearchAction(){
 				</td>
 				</tr>
 				<tr>
-				<td><s:submit value="購入"/></td>
+				<s:if test="#session.loginFlg==true">
+				  <s:submit value="購入" onclick="goBuyItemAction();"/>
+				</s:if>
+				<s:else>
+				   <input type="submit" value="購入" onclick="goBuyItemAction();" disabled="disabled" />
+				</s:else>
 				 </tr>
 			</table>
-			<span>前画面に戻る場合は</span><s:a href="javascript:void(0)" onclick="document.form.submit();return false;">こちら</s:a>
 			</div>
-       </s:form>
+		</s:form>
+
+
 
 </body>
 

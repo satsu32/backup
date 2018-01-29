@@ -18,7 +18,8 @@
 	<div id="main">
 		<br>
 		<div class="pageback">
-			<a href='<s:url action="GoHomeAction"/>'>TOP</a> &nbsp;>&nbsp; <a>確認画面</a>
+		<s:include value="header.jsp"/>
+
 		</div>
 		<br>
 		<div class="confirm">

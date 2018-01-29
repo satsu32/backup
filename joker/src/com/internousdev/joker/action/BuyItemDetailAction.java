@@ -7,6 +7,9 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemDetailAction extends ActionSupport{
 
+	private String loginUserName;
+	private String loginPassword;
+
 	private String id;
 	private String itemName;
 	private String itemImage;
@@ -42,6 +45,9 @@ public class BuyItemDetailAction extends ActionSupport{
 //		System.out.println("pay :"+pay);
 		System.out.println("search :"+search);
 		System.out.println("errorMessage :"+errorMessage);
+		System.out.println("USERNAME : " + loginUserName);
+		System.out.println("PASSWORD : " + loginPassword);
+		System.out.println("---------------------------");
 
 
 		CartDTO dto = new CartDTO();
@@ -95,6 +101,30 @@ public class BuyItemDetailAction extends ActionSupport{
 		result=SUCCESS;
 		return result;
 
+	}
+
+
+
+	public String getLoginUserName() {
+		return loginUserName;
+	}
+
+
+
+	public void setLoginUserName(String loginUserName) {
+		this.loginUserName = loginUserName;
+	}
+
+
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
 	}
 
 

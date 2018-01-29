@@ -47,7 +47,7 @@ function goBuyItemDetailAction(){
               <th>購入日</th>
           </tr>
           -->
-          <s:iterator value="itemInfoTransactionList">
+          <s:iterator value="itemInfoTransactionList" status="stt">
 
           <s:url id="url" action="BuyItemDetailAction">
                  	<s:param name="id" value="%{id}"/>
@@ -60,6 +60,9 @@ function goBuyItemDetailAction(){
 			<s:a href="%{url}">
 				<img src='<s:property value="itemImage"/>' width="100px" height="100px"/>
 			</s:a>
+		<s:if test="((#stt.count) % 5)==0">
+		<br>
+		</s:if>
 
             </s:iterator>
             </table>

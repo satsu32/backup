@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="./css/header.css"/>
 <meta charset="UTF-8">
 	<script>
 function goIndexAction(){
@@ -31,12 +32,21 @@ function goPasswordResetAction(){
 <div class="login">
     <s:form id="form" name="form" action="LoginAction" method="post">
 
+	<s:if test="#session.loginFlg==true">
+	    <s:submit value="ホーム" onclick="goIndexAction();"/>
+	    <s:submit value="商品一覧" onclick="goItemAction();"/>
+	    <s:submit value="ユーザー登録" onclick="goUserCreateAction();"/>
+		<s:submit value="マイページ" onclick="goMyPageAction();"/>
+		<s:submit value="パスワード変更" onclick="goPasswordResetAction();"/>
+	</s:if>
+	<s:else>
+		<input id="submit_button" type="submit" value="ホーム" onclick="goIndexAction();"/>
+	    <input type="submit" value="商品一覧" onclick="goItemAction();" disabled="disabled" />
+	    <input type="submit" value="ユーザー登録" onclick="goUserCreateAction();" />
+		<input type="submit" value="マイページ" onclick="goMyPageAction();" disabled="disabled" />
+		<input type="submit" value="パスワード変更" onclick="goPasswordResetAction();" disabled="disabled" />
+	</s:else>
 
-    <s:submit value="ホーム" onclick="goIndexAction();"/>
-    <s:submit value="商品一覧" onclick="goItemAction();"/>
-    <s:submit value="ユーザー登録" onclick="goUserCreateAction();"/>
-	<s:submit value="マイページ" onclick="goMyPageAction();"/>
-	<s:submit value="パスワード変更" onclick="goPasswordResetAction();"/>
 
         <s:if test="#session.userName!=null">
         	<s:if test="#session.loginFlg!=true">
@@ -60,6 +70,10 @@ function goPasswordResetAction(){
         <tr>
                 <s:if test="#session.userName!=null">
         	<td>ようこそ、<s:property value="#session.userName"/>さん</td>
+			<!--
+        	<s:hidden name="loginUserId" value="%{loginUserId}"/>
+        	<s:hidden name="loginPassword" value="%{loginPassword}"/>
+         -->
         </s:if>
         <s:else>
         	<td><td>

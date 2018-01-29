@@ -35,7 +35,7 @@ function goMyPageAction(){
 <body>
 <s:include value="header.jsp"/>
 
-	<s:form id="form" name="form" action="HomeAction">
+	<s:form id="form" name="form" action="BuyItemAction">
 		<div id="header">
 			<div id="pr"></div>
 		</div>
@@ -52,7 +52,7 @@ function goMyPageAction(){
 				<s:if test="errorMessage!=null">
 					<p><s:property value="errorMessage"/></p>
 				</s:if>
-
+				<s:hidden name="actionType" value="2"/><br>
 				<s:hidden name="loginUserId" value="%{loginUserId}"/><br>
 				<table>
 				<tr>
@@ -97,7 +97,6 @@ function goMyPageAction(){
 				<td><s:submit value="購入" onclick="goBuyItemAction();"/></td>
 				 </tr>
 			</table>
-			<span>前画面に戻る場合は</span><s:a href="javascript:void(0)" onclick="document.form.submit();return false;">こちら</s:a>
 			</div>
        </s:form>
 </body>

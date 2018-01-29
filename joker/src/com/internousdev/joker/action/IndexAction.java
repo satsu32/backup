@@ -1,5 +1,6 @@
 package com.internousdev.joker.action;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -21,7 +22,38 @@ public class IndexAction extends ActionSupport implements SessionAware{
 	private Map<String,Object> session;
 
 	public String execute(){
+
+
+		if(loginUserId !=null){
+
+			String[] userId = loginUserId.split(", ",0);
+
+			loginUserId=String.valueOf(userId[0]);
+
+
+
 		System.out.println("IndexAction-----");
+//		String []loginUserIdList  = loginUserId.split(", ",0);
+//		System.out.println("USERID   : " + loginUserIdList[0].toString());
+		System.out.println("USERID   : " + loginUserId);
+
+		}
+
+
+		if(loginPassword != null){
+
+			String[] password = loginPassword.split(", ",0);
+
+			loginPassword=String.valueOf(password[0]);
+
+		System.out.println("PASSWORD : " + loginPassword);
+		System.out.println("---------------------------");
+
+		}else{
+			System.out.println("未ログインの状態");
+		}
+
+
 		String result=ERROR;
 
 

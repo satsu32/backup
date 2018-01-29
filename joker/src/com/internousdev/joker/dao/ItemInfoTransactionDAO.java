@@ -33,15 +33,15 @@ public class ItemInfoTransactionDAO {
 				dto.setInsertDate(rs.getString("insert_date"));
 				dto.setUpdateDate(rs.getString("update_date"));
 
-				System.out.println("ItemInfoTransactionDAO----");
-				System.out.println(dto.getId());
-				System.out.println(dto.getItemName());
-				System.out.println(dto.getItemImage());
-				System.out.println(dto.getItemPrice());
-				System.out.println(dto.getItemStock());
-				System.out.println(dto.getInsertDate());
-				System.out.println(dto.getUpdateDate());
-				System.out.println("-------------------------");
+//				System.out.println("ItemInfoTransactionDAO----");
+//				System.out.println(dto.getId());
+//				System.out.println(dto.getItemName());
+//				System.out.println(dto.getItemImage());
+//				System.out.println(dto.getItemPrice());
+//				System.out.println(dto.getItemStock());
+//				System.out.println(dto.getInsertDate());
+//				System.out.println(dto.getUpdateDate());
+//				System.out.println("-------------------------");
 				itemInfoTransactionList.add(dto);
 			  }
 		} catch(Exception e) {

@@ -35,11 +35,42 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 	private String message;
 	private String id;
 	private String loginUserId;
+	private String loginPassword;
 
 	public String execute() throws SQLException {
 		String result=ERROR;
 		String user_master_id = null;
 		System.out.println("MyPageAction-------");
+
+		if(loginUserId !=null){
+
+			String[] userId = loginUserId.split(",",0);
+
+			loginUserId=String.valueOf(userId[0]);
+
+//		String []loginUserIdList  = loginUserId.split(", ",0);
+//		System.out.println("USERID   : " + loginUserIdList[0].toString());
+		System.out.println("USERID   : " + loginUserId);
+
+		}
+
+
+		if(loginPassword != null){
+
+			String[] password = loginPassword.split(", ",0);
+
+			loginPassword=String.valueOf(password[0]);
+
+		System.out.println("PASSWORD : " + loginPassword);
+		System.out.println("---------------------------");
+
+		}else{
+			System.out.println("未ログインの状態");
+		}
+
+
+
+
 		// if(!session.containsKey("id")){
 		// return ERROR;
 		// }
@@ -111,6 +142,28 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public void setLoginUserId(String loginUserId) {
 		this.loginUserId = loginUserId;
+	}
+
+
+
+	public ArrayList<MyPageDTO> getMyPageList() {
+		return myPageList;
+	}
+
+	public void setMyPageList(ArrayList<MyPageDTO> myPageList) {
+		this.myPageList = myPageList;
+	}
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
 	}
 
 	public String getDeleteFlg() {

@@ -30,21 +30,7 @@
        <div>
             <h1>商品を購入しました</h1>
        </div>
-       <div>
-            <s:form  id="form" name="form" action="MyPageAction">
-                <input type="submit"  class="btn btn-primary btn-block btn-large" value="マイページ"/>
-            </s:form>
-            <br/>
-       </div>
-       <div>
-           <s:form action="GoHomeAction">
-                <s:submit value="Homeへ" />
-           </s:form>
-       </div>
-       <div id="footer">
-            <div id="pr">
-            </div>
-       </div>
+
      </div>
 </body>
 </html>

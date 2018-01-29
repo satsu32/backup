@@ -13,28 +13,20 @@
     <meta name="keywords" content="" />
     <meta charset="utf-8">
 <link rel="stylesheet" href="./css/userCreateComplete.css">
-    <title>UserCreateComplete画面</title>
-
+    <title>ユーザー登録画面</title>
 </head>
 <body>
-<!--<s:include value="header.jsp"/>-->
-
+<s:include value="header.jsp"/>
     <div id="header">
         <div id="pr">
         </div>
      </div>
      <div id="main">
         <div id="top">
-            <p>UserCreateConfirm</p>
+            <p>ユーザー登録完了</p>
         </div>
         <div><br>
            <h3>ユーザーの登録が完了致しました。</h3>
-
-           <div>
-              <s:form  id="form" name="form" action="LoginAction">
-                    <input type="submit"  class="btn btn-primary btn-block btn-large" value="ログインへ"/>
-              </s:form><a href='login.jsp'>ログインへ</a>
-           </div>
         </div>
     </div>
     <div id="footer">

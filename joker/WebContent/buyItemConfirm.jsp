@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="keywords" content="" />
     <meta charset="utf-8">
-<title>BuyItemConfirm画面</title>
+<title>商品購入内容確認画面</title>
 <style type="text/css">
 </style>
 </head>
@@ -25,7 +25,7 @@
     </div>
     <div id="main">
         <div id="top">
-        <p>BuyItemConfirm</p>
+        <p>商品購入内容確認</p>
         </div>
         <div class="example">
       <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
@@ -101,9 +101,6 @@
                 </tr>
 
        </s:form>
-            <div>
-                <span>前画面に戻る場合は</span><a href='<s:url action="HomeAction"/>'>こちら</a>
-            </div>
         </div>
       </div>
     </div>
