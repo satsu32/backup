@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="./css/header.css"/>
+<!--<link rel="stylesheet" href="./css/header.css"/>-->
 <meta charset="UTF-8">
 	<script>
 function goIndexAction(){
@@ -40,11 +40,11 @@ function goPasswordResetAction(){
 		<s:submit value="パスワード変更" onclick="goPasswordResetAction();"/>
 	</s:if>
 	<s:else>
-		<input id="submit_button" type="submit" value="ホーム" onclick="goIndexAction();"/>
+		<input id="submit_button" type="submit" value="ホーム" onclick="goIndexAction();" />
 	    <input type="submit" value="商品一覧" onclick="goItemAction();" disabled="disabled" />
 	    <input type="submit" value="ユーザー登録" onclick="goUserCreateAction();" />
 		<input type="submit" value="マイページ" onclick="goMyPageAction();" disabled="disabled" />
-		<input type="submit" value="パスワード変更" onclick="goPasswordResetAction();" disabled="disabled" />
+		<input type="submit" value="パスワード変更" onclick="goPasswordResetAction();"/>
 	</s:else>
 
 

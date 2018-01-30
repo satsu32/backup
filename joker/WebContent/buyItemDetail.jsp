@@ -25,8 +25,18 @@ function goSearchAction(){
 
 			<div>
 				<p>商品検索</p>
-				<input type="search" name="search" placeholder="キーワードを入力">
-				<s:submit id="searchsubmit" value="search" onclick="goSearchAction();"/>
+				<s:if test="#session.loginFlg==true">
+				    <input type="search" name="search" placeholder="キーワードを入力"/>
+				</s:if>
+				<s:else>
+				  <input type="search" name="search" placeholder="キーワードを入力" disabled="disabled">
+				</s:else>
+				<s:if test="#session.loginFlg==true">
+				  <s:submit id="searchsubmit" value="search" onclick="goSearchAction();"/>
+			    </s:if>
+			    <s:else>
+				   <input type="submit" value="search" onclick="goSearchAction();" disabled="disabled" />
+				</s:else>
 			</div>
 			<div>
 				<s:if test="errorMessage!=null">

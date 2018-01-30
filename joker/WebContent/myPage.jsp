@@ -24,7 +24,8 @@
    </div>
    <div id="main">
       <div id="top">
-         <p>MyPage</p>
+         <h2>マイページ</h2>
+             <img src="images/item/air.jpg"align="right"/>
       </div>
       <!--
       <div>

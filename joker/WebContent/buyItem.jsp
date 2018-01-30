@@ -40,9 +40,7 @@ function goMyPageAction(){
 			<div id="pr"></div>
 		</div>
 			<div id="top">
-
 		</div>
-			<img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
 			<div>
 				<p>商品検索</p>
 				<input type="search" name="search" placeholder="キーワードを入力">

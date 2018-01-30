@@ -12,6 +12,8 @@
 </script>
 <title>パスワード再設定画面</title>
 </head>
+
+<s:include value="header.jsp"/>
 	<div id="main">
 		<h2>パスワード再設定画面</h2>
 		<br>
