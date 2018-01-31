@@ -12,7 +12,7 @@
     <meta name="description" content=""/>
     <meta name="keywords" content=""/>
 <link rel="stylesheet" href="./css/userCreate.css">
-<title>UserCreate画面</title>
+<title>ユーザー登録</title>
 
 </head>
 <body>

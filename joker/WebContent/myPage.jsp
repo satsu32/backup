@@ -13,7 +13,7 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta charset="utf-8">
-	<title>MyPage画面</title>
+	<title>マイページ画面</title>
 </head>
 <body>
 <s:include value="header.jsp"/>

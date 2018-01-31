@@ -30,7 +30,7 @@ function goMyPageAction(){
 
 
 
-<title>BuyItem画面</title>
+<title>商品一覧</title>
 </head>
 <body>
 <s:include value="header.jsp"/>

@@ -21,7 +21,7 @@ function goBuyItemDetailAction(){
 }
 
 </script>
-<title>Home画面</title>
+<title>ホーム画面</title>
 
 </head>
 <body>
