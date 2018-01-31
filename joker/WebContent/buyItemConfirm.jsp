@@ -28,7 +28,6 @@
         <p>商品購入内容確認</p>
         </div>
         <div class="example">
-      <img src="./images/Lighthouse.jpg" alt="写真" width="193" height="130">
     <div>
     <s:form action="BuyItemConfirmAction">
     	<s:hidden name="buySingleFlg" value="%{buySingleFlg}"/>

@@ -41,31 +41,31 @@ insert_date datetime,
 delete_date datetime
 );
 
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("Pen","./images/item/pen.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("PC","./images/item/pc.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("NoteBook","./images/item/notebook.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("テレビ","./images/item/tv.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ゲーム","./images/item/game.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("カメラ","./images/item/camera.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ビデオカメラ","./images/item/videocamera.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ドローン","./images/item/drone.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("オーディオ","./images/item/audio.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("電子ピアノ","./images/item/piano.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("カー用品","./images/item/cargoods.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ビューディー","./images/item/beauty.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("健康家電","./images/item/health.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("時計","./images/item/watch.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("スーツケース","./images/item/case.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("医薬品","./images/item/medicine.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("インク","./images/item/inc.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("メディア","./images/item/media.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("電池","./images/item/battery.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("映画","./images/item/cinema.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("音楽","./images/item/music.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("おもちゃ","./images/item/hobby.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("電子辞書","./images/item/dictionary.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("スマートフォン","./images/item/smartphone.jpg",200,80);
-INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("格安ＳＩＭ","./images/item/sim.jpg",200,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("Pen","./images/item/pen.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("PC","./images/item/pc.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("NoteBook","./images/item/notebook.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("テレビ","./images/item/tv.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ゲーム","./images/item/game.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("カメラ","./images/item/camera.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ビデオカメラ","./images/item/videocamera.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ドローン","./images/item/drone.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("オーディオ","./images/item/audio.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("電子ピアノ","./images/item/piano.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("カー用品","./images/item/cargoods.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("ビューディー","./images/item/beauty.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("健康家電","./images/item/health.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("時計","./images/item/watch.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("スーツケース","./images/item/case.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("医薬品","./images/item/medicine.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("インク","./images/item/inc.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("メディア","./images/item/media.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("電池","./images/item/battery.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("映画","./images/item/cinema.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("音楽","./images/item/music.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("おもちゃ","./images/item/hobby.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("電子辞書","./images/item/dictionary.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("スマートフォン","./images/item/smartphone.jpg",80,80);
+INSERT INTO item_info_transaction(item_name,item_image, item_price,item_stock) VALUES("格安ＳＩＭ","./images/item/sim.jpg",80,80);
 
 
 INSERT INTO login_user_transaction(login_id,login_pass,user_name) VALUES("ooo","555","555");

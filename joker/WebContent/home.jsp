@@ -33,7 +33,6 @@ function goBuyItemDetailAction(){
    </div>
    <div id="main">
       <div id="top">
-         <p>ホーム画面</p>
       </div>
       <div>
 		<s:form id="form" name="form" action="BuyItemDetailAction">

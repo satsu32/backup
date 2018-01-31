@@ -27,6 +27,7 @@
         </div>
         <div><br>
            <h3>ユーザーの登録が完了致しました。</h3>
+            <img src="images/item/air.jpg"/>
         </div>
     </div>
     <div id="footer">

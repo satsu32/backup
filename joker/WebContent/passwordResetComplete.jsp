@@ -11,5 +11,6 @@
 <s:include value="header.jsp"/>
 
    <h2>パスワードの変更が完了しました。</h2>
+    <img src="images/item/air.jpg"/>
 </body>
 </html>

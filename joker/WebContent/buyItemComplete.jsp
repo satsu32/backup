@@ -29,6 +29,7 @@
        </div>
        <div>
             <h1>商品を購入しました</h1>
+             <img src="images/item/air.jpg"/>
        </div>
 
      </div>

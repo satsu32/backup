@@ -1,9 +1,8 @@
 @CHARSET "UTF-8";
 
 
-body {
 
-background-color : #80ffff;
-
-
+}
+p{
+   font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
 }

@@ -56,7 +56,8 @@
                         <input type="text" name="userName" placeholder="UserName" required="required" value=""/>
                     </td>
                   </tr>
-                  <s:submit value="登録"/>
+                  <!--<s:submit value="登録"/>-->
+                   <input type="submit" value="登録" class="button">
                 </s:form>
                 </table>
                 </div>

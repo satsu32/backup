@@ -2,16 +2,14 @@
 
 
 h1{
-    color:#FFFFFF
+
     font-family: "Hiragino Sans","ヒラギノ角ゴシック"; font-weight: 400;
     }
 h2{
-    color:#FFFFFF
+
     font-family: "Hiragino Sans","ヒラギノ角ゴシック"; font-weight: 400;
     }
-body {
 
-background-color : #80ffff;
-
-
+p{
+   font-family: "Tsukushi A Round Gothic","筑紫A丸ゴシック"; font-weight: bold;
 }

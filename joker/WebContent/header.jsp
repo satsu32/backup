@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!--<link rel="stylesheet" href="./css/header.css"/>-->
+<link rel="stylesheet" href="./css/header.css"/>
 <meta charset="UTF-8">
 	<script>
 function goIndexAction(){
@@ -69,7 +69,7 @@ function goPasswordResetAction(){
         <table>
         <tr>
                 <s:if test="#session.userName!=null">
-        	<td>ようこそ、<s:property value="#session.userName"/>さん</td>
+        	<td><P>ようこそ、<s:property value="#session.userName"/>さん</P></td>
 			<!--
         	<s:hidden name="loginUserId" value="%{loginUserId}"/>
         	<s:hidden name="loginPassword" value="%{loginPassword}"/>
